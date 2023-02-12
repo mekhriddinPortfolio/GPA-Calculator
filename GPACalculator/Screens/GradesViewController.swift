@@ -34,7 +34,7 @@ class GradesViewController: UIViewController {
     
     lazy var bootomView: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "TabBarColor")
         view.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
         view.layer.shadowOpacity = 1
         view.layer.shadowRadius = 104
@@ -125,7 +125,7 @@ class GradesViewController: UIViewController {
     }
     
     private func configureUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "BackgroundColor")
         self.navigationItem.titleView = twoLineTitleView(text: semester?.name ?? "")
         navigationController?.backgroundColor(backgroundcolor: UIColor.white)
         
@@ -232,9 +232,9 @@ extension GradesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 30))
         
-        let label = MainLabel(text: "Subjects", textColor: UIColor.init(hex: "363636"), textAlignment: .left, font: UIFont(name: "Poppins-Bold", size: 15)!)
-        let glabel = MainLabel(text: "Grades", textColor: UIColor.init(hex: "363636"), textAlignment: .left, font: UIFont(name: "Poppins-Regular", size: 15)!)
-        let clabel = MainLabel(text: "Credits", textColor: UIColor.init(hex: "363636"), textAlignment: .left, font: UIFont(name: "Poppins-Regular", size: 15)!)
+        let label = MainLabel(text: "Subjects", textColor: UIColor(named: "LabelColor2")!, textAlignment: .left, font: UIFont(name: "Poppins-Bold", size: 15)!)
+        let glabel = MainLabel(text: "Grades", textColor: UIColor(named: "LabelColor2")!, textAlignment: .left, font: UIFont(name: "Poppins-Regular", size: 15)!)
+        let clabel = MainLabel(text: "Credits", textColor: UIColor(named: "LabelColor2")!, textAlignment: .left, font: UIFont(name: "Poppins-Regular", size: 15)!)
         
         label.frame = CGRect.init(x: 44, y: 15, width: (label.text?.widthOfString(usingFont: label.font)) ?? 0, height: headerView.frame.height)
         glabel.frame = CGRect.init(x: UIScreen.main.bounds.width / 2, y: 15, width: (glabel.text?.widthOfString(usingFont: clabel.font)) ?? 0, height: headerView.frame.height)
@@ -253,7 +253,7 @@ extension GradesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 150))
-        let cLabel1 = MainLabel(text: "Credits:", textColor: UIColor.init(hex: "363636"), textAlignment: .left, font: UIFont(name: "Poppins-SemiBold", size: 18)!)
+        let cLabel1 = MainLabel(text: "Credits:", textColor: UIColor(named: "LabelColor2")!, textAlignment: .left, font: UIFont(name: "Poppins-SemiBold", size: 18)!)
         footerView.addSubview(cLabel1)
         cLabel1.snp.makeConstraints { make in
             make.leading.equalTo(footerView).offset(40)
@@ -268,7 +268,7 @@ extension GradesViewController: UITableViewDelegate, UITableViewDataSource {
             make.width.equalTo(20)
         }
         
-        let gLabel1 = MainLabel(text: "GPA:", textColor: UIColor.init(hex: "363636"), textAlignment: .left, font: UIFont(name: "Poppins-SemiBold", size: 18)!)
+        let gLabel1 = MainLabel(text: "GPA:", textColor: UIColor(named: "LabelColor2")!, textAlignment: .left, font: UIFont(name: "Poppins-SemiBold", size: 18)!)
         footerView.addSubview(gLabel1)
         gLabel1.snp.makeConstraints { make in
             make.leading.equalTo(footerView.snp.centerX).offset(25)

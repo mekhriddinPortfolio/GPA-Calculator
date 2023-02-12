@@ -67,9 +67,9 @@ class MainViewController: UIViewController {
     }
     
     private func configureUI() {
-        view.backgroundColor = .white
+        view.backgroundColor =  UIColor(named: "BackgroundColor")
         self.navigationItem.titleView = twoLineTitleView(text: "Semesters")
-        navigationController?.backgroundColor(backgroundcolor: UIColor.white)
+        navigationController?.backgroundColor(backgroundcolor: UIColor(named: "BackgroundColor")!)
        
         navigationItem.setRightBarButton(UIBarButtonItem(image: UIImage(named: "plus"), style: .done, target: self, action: #selector(plusTapped)), animated: true)
         navigationItem.rightBarButtonItem?.tintColor = blueColor

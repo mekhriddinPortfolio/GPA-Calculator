@@ -59,7 +59,8 @@ class CreditView: UIView {
         imageView1.snp.makeConstraints { make in
             make.leading.equalTo(self).offset(10)
             make.centerY.equalTo(self)
-            make.height.width.equalTo(14)
+            make.width.equalTo(16)
+            make.height.width.equalTo(35)
         }
         
         self.addSubview(imageView2)
@@ -67,7 +68,8 @@ class CreditView: UIView {
         imageView2.snp.makeConstraints { make in
             make.trailing.equalTo(self).offset(-10)
             make.centerY.equalTo(self)
-            make.height.width.equalTo(14)
+            make.width.equalTo(16)
+            make.height.width.equalTo(35)
         }
         
         self.addSubview(gradeLabel)

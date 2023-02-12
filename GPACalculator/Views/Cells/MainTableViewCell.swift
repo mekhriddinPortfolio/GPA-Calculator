@@ -14,13 +14,13 @@ class MainTableViewCell: SwipeTableViewCell {
     
     lazy var myImageView = UIImageView(image: UIImage(named: "1")!)
     
-    lazy var myLabel = MainLabel(text: "Semester 1", textColor: UIColor.black, textAlignment: .left, font: UIFont(name: "Poppins-Regular", size: 18)!)
+    lazy var myLabel = MainLabel(text: "Semester 1", textColor: UIColor(named: "LabelColor")!, textAlignment: .left, font: UIFont(name: "Poppins-Regular", size: 18)!)
     
-    lazy var gpaLabel1 = MainLabel(text: "GPA:", textColor: UIColor.init(hex: "363636"), textAlignment: .right, font: UIFont(name: "Poppins-Regular", size: 12)!)
+    lazy var gpaLabel1 = MainLabel(text: "GPA:", textColor: UIColor(named: "LabelColor2")!, textAlignment: .right, font: UIFont(name: "Poppins-Regular", size: 12)!)
     
     lazy var gpaLabel2 = MainLabel(text: "4.50", textColor: UIColor.init(hex: "F08F5F"), textAlignment: .left, font: UIFont(name: "Poppins-Medium", size: 12)!)
     
-    lazy var creditLabel1 = MainLabel(text: "Credits:", textColor: UIColor.init(hex: "363636"), textAlignment: .right, font: UIFont(name: "Poppins-Regular", size: 12)!)
+    lazy var creditLabel1 = MainLabel(text: "Credits:", textColor: UIColor(named: "LabelColor2")!, textAlignment: .right, font: UIFont(name: "Poppins-Regular", size: 12)!)
     
     lazy var creditLabel2 = MainLabel(text: "17", textColor: UIColor.init(hex: "F08F5F"), textAlignment: .left, font: UIFont(name: "Poppins-Medium", size: 12)!)
     

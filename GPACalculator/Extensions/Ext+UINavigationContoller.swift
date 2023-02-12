@@ -11,6 +11,6 @@ extension UINavigationController {
     
     func backgroundColor(backgroundcolor: UIColor) {
         self.navigationBar.shadowImage = UIImage()
-        self.navigationBar.barTintColor = .white
+        self.navigationBar.barTintColor = UIColor(named: "BackgroundColor")
     }
 }

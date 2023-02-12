@@ -14,7 +14,7 @@ class GFAlertVC: UIViewController {
     var addSubjectTapped: ((String) -> Void)?
     
     let containerView = GFAlertContainerView()
-    let titleLabel = MainLabel(text: "Add new subject", textColor: UIColor.init(hex: "494949"), textAlignment: .left, font: UIFont(name: "Poppins-SemiBold", size: 16)!)
+    let titleLabel = MainLabel(text: "Add new subject", textColor: UIColor(named: "LabelColor3")!, textAlignment: .left, font: UIFont(name: "Poppins-SemiBold", size: 16)!)
     
     let messageLabel = MainLabel(text: "Add new subject", textColor: UIColor.init(hex: "B1B1B1"), textAlignment: .left, font: UIFont(name: "Poppins-SemiBold", size: 12)!)
     let actionButton = MainButton(title: "Add")
@@ -96,8 +96,8 @@ class GFAlertVC: UIViewController {
             make.height.equalTo(40)
         }
         
-        cancelButton.backgroundColor = .white
-        cancelButton.setTitleColor(UIColor.init(hex: "494949"), for: .normal)
+        cancelButton.backgroundColor = .clear
+        cancelButton.setTitleColor(UIColor(named: "LabelColor3"), for: .normal)
         cancelButton.titleLabel!.font = UIFont(name: "Poppins-SemiBold", size: 14)
         
         cancelButton.snp.makeConstraints { make in
@@ -128,7 +128,7 @@ class GFAlertVC: UIViewController {
         }
         
         view.addSubview(textFieldLabel)
-        textFieldLabel.backgroundColor = .white
+        textFieldLabel.backgroundColor = UIColor(named: "BackgroundColor")!
         textFieldLabel.snp.makeConstraints { make in
             make.leading.equalTo(textField).offset(10)
             make.width.equalTo(textFieldLabel.text!.width(withConstrainedHeight: 11, font: textFieldLabel.font) + 12)

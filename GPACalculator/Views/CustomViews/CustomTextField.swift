@@ -14,6 +14,16 @@ class AITextField: UITextField {
         super.init(frame: frame)
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        if traitCollection.userInterfaceStyle == .dark {
+            self.layer.borderColor = UIColor.gray.withAlphaComponent(0.5).cgColor
+        } else {
+            self.layer.borderColor = UIColor.gray.withAlphaComponent(0.2).cgColor
+        }
+    }
+    
     init() {
         super.init(frame: .zero)
         self.layer.borderColor = UIColor.gray.withAlphaComponent(0.2).cgColor
@@ -23,7 +33,7 @@ class AITextField: UITextField {
         self.layer.masksToBounds = false
         self.rightViewMode = .always
         self.tintColor = blueColor
-        self.textColor = UIColor.init(hex: "494949")
+        self.textColor = UIColor(named: "LabelColor3")
         self.font = UIFont(name: "Poppins-Medium", size: 16)!
     }
     

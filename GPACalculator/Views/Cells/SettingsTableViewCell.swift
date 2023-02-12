@@ -15,42 +15,42 @@ class SettingsTableViewCell: UITableViewCell {
     
     lazy var backView: UIView = {
         let view = UIView()
-        view.layer.backgroundColor = UIColor(red: 0.573, green: 0.639, blue: 0.992, alpha: 0.1).cgColor
+        view.backgroundColor = UIColor(named: "SettingsCell")
         view.layer.cornerRadius = 16
         return view
     }()
-    
+
     lazy var iconImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.tintColor = UIColor.black
+        imageView.tintColor = UIColor(named: "LabelColor")!
         imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(named: "Icon-Bed")
         return imageView
     }()
     
-    lazy var mainLabel = MainLabel(text: "Dark mode", textColor: UIColor.init(hex: "#000000"), textAlignment: .left, font: UIFont(name: "Poppins-Regular", size: 14)!)
+    lazy var mainLabel = MainLabel(text: "Dark mode", textColor: UIColor(named: "LabelColor")!, textAlignment: .left, font: UIFont(name: "Poppins-Regular", size: 14)!)
     
     lazy var backIconImage: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(named: "Icon-Arrow")
+        imageView.image = UIImage(systemName: "chevron.right")
+        imageView.tintColor = UIColor(named: "LabelColor")
         return imageView
     }()
     
     lazy var switchControl: UISwitch = {
         let switchControl = UISwitch()
-        switchControl.transform = CGAffineTransformMakeScale(0.8, 0.8)
+        switchControl.transform = CGAffineTransformMakeScale(0.75, 0.75)
         switchControl.isOn = true
         switchControl.addTarget(self, action: #selector(switchChanged), for: .valueChanged)
         switchControl.isHidden = true
         switchControl.onTintColor = blueColor
         switchControl.onImage = UIImage(named: "Icon-Arrow")
         switchControl.isOn = false
-        switchControl.increaseThumb()
         return switchControl
     }()
     
-    lazy var descLabel = MainLabel(text: "", textColor: UIColor.init(hex: "#000000"), textAlignment: .right, font: UIFont(name: "Poppins-Regular", size: 12)!)
+    lazy var descLabel = MainLabel(text: "", textColor: UIColor(named: "LabelColor")!, textAlignment: .right, font: UIFont(name: "Poppins-Regular", size: 12)!)
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -113,8 +113,8 @@ class SettingsTableViewCell: UITableViewCell {
         backIconImage.snp.makeConstraints { make in
             make.trailing.equalToSuperview().offset(-15)
             make.centerY.equalToSuperview()
-            make.width.equalTo(24)
-            make.height.equalTo(24)
+            make.width.equalTo(16)
+            make.height.equalTo(16)
         }
         
         descLabel.snp.makeConstraints { make in
@@ -129,13 +129,4 @@ class SettingsTableViewCell: UITableViewCell {
            
         }
     }
-}
-
-extension UISwitch {
-
-func increaseThumb(){
-    if let thumb = self.subviews[0].subviews[1].subviews[2] as? UIImageView {
-        thumb.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
-    }
-  }
 }

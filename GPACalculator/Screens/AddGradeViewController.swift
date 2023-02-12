@@ -17,23 +17,23 @@ class AddGradeViewController: UIViewController {
     
     lazy var topView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.init(hex: "EFEFEF")
+        view.backgroundColor = UIColor(named: "LineColor")!
         view.layer.cornerRadius = 2.5
         return view
     }()
     
-    lazy var semesterLabel = MainLabel(text: "Add grade", textColor: UIColor.init(hex: "000000"), textAlignment: .center, font: UIFont(name: "Poppins-Regular", size: 16)!)
+    lazy var semesterLabel = MainLabel(text: "Add grade", textColor: UIColor(named: "LabelColor")!, textAlignment: .center, font: UIFont(name: "Poppins-Regular", size: 16)!)
     
     lazy var lineView1: UIView = {
         let line = UIView()
-        line.backgroundColor = UIColor.init(hex: "EFEFEF")
+        line.backgroundColor = UIColor(named: "LineColor")!
         line.layer.cornerRadius = 0.5
         return line
     }()
     
     lazy var lineView2: UIView = {
         let line = UIView()
-        line.backgroundColor = UIColor.init(hex: "EFEFEF")
+        line.backgroundColor = UIColor(named: "LineColor")!
         line.layer.cornerRadius = 0.5
         return line
     }()
@@ -44,7 +44,7 @@ class AddGradeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "BackgroundColor")
         setupViews()
         addSubviews()
         setConstraints()

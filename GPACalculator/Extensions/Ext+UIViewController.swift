@@ -26,7 +26,7 @@ extension UIViewController {
         label.numberOfLines = 0
         label.font = UIFont(name: "Poppins-SemiBold", size: 20)
         label.textAlignment = .center
-        label.textColor = UIColor(red: 0.213, green: 0.213, blue: 0.213, alpha: 1)
+        label.textColor = UIColor(named: "LabelColor")
         label.lineBreakMode = .byWordWrapping
         label.text = text
         return label

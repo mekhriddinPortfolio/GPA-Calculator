@@ -16,6 +16,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     let profileImage = UIImageView(image: UIImage.init(named: "chat"))
     let basketImage = UIImageView(image: UIImage.init(named: "like"))
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         generateTabBar()
@@ -25,6 +26,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func generateTabBar() {
+        tabBar.backgroundColor = .clear
         
         self.profileImage.tintColor = grayColor
         self.basketImage.tintColor = grayColor
@@ -52,11 +54,12 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     
+    let shapeLayer = CAShapeLayer()
     
     private func configureTabBarAppearence() {
         let width = Int(tabBar.bounds.width)
         let height = 200
-        let shapeLayer = CAShapeLayer()
+        
         let bazierPath = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: width, height: height), byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 25, height: 1.0)).cgPath
         shapeLayer.path = bazierPath
         shapeLayer.fillColor = UIColor.white.cgColor
@@ -67,6 +70,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         tabBar.layer.insertSublayer(shapeLayer, at: 0)
         tabBar.itemWidth = CGFloat(width / 5)
         tabBar.itemPositioning = .centered
+        tabBar.backgroundColor = .clear
         
         tabBar.insertSubview(imageV, belowSubview: tabBar)
         tabBar.insertSubview(profileImage, aboveSubview: tabBar)
@@ -81,17 +85,28 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+            
+            if traitCollection.userInterfaceStyle == .dark {
+                shapeLayer.fillColor = UIColor.init(hex: "363636").cgColor
+            } else {
+                shapeLayer.fillColor = UIColor.white.cgColor
+            }
+
+    }
+    
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         basketImage.image = basketImage.image?.withRenderingMode(.alwaysTemplate)
         profileImage.image = profileImage.image?.withRenderingMode(.alwaysTemplate)
         imageV.image = imageV.image?.withRenderingMode(.alwaysTemplate)
         
         self.profileImage.tintColor = grayColor
-        profileImage.backgroundColor = .white
+        profileImage.backgroundColor = .clear
         self.basketImage.tintColor = grayColor
-        basketImage.backgroundColor = .white
+        basketImage.backgroundColor = .clear
         self.imageV.tintColor = grayColor
-        imageV.backgroundColor = .white
+        imageV.backgroundColor = .clear
         
         
         switch item.tag {

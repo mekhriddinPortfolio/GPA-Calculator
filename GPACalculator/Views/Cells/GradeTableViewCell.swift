@@ -16,12 +16,12 @@ class GradeTableViewCell: UITableViewCell {
     
     lazy var mainView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.init(hex: "F8F8FB")
+        view.backgroundColor = UIColor(named: "SettingsCell")!
         view.layer.cornerRadius = 16
         return view
     }()
     
-    lazy var mainLabel = MainLabel(text: "Calculus 1", textColor: UIColor.init(hex: "#494949"), textAlignment: .left, font: UIFont(name: "Karla-Regular", size: 18)!)
+    lazy var mainLabel = MainLabel(text: "Calculus 1", textColor: UIColor(named: "LabelColor3")!, textAlignment: .left, font: UIFont(name: "Karla-Regular", size: 18)!)
     
     lazy var creditView = CreditView()
     lazy var gradeView = GradeView(index: index)

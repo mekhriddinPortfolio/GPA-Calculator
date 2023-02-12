@@ -15,7 +15,7 @@ class ChooseGradeCollectionViewCell: UICollectionViewCell {
     var currentIndex = 0
     var gradeChosen : ((Int) -> Void)?
     
-    lazy var mainLabel = MainLabel(text: "A +", textColor: UIColor.black, textAlignment: .left, font: UIFont.systemFont(ofSize: 16))
+    lazy var mainLabel = MainLabel(text: "A +", textColor: UIColor(named: "LabelColor")!, textAlignment: .left, font: UIFont.systemFont(ofSize: 16))
     
     lazy var mainImageView: UIImageView = {
         let imageView = UIImageView()

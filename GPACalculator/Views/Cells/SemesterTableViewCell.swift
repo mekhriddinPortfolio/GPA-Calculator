@@ -9,7 +9,7 @@ import UIKit
 
 class SemesterTableViewCell: UITableViewCell {
     
-    lazy var mainLabel = MainLabel(text: "Semester 1", textColor: UIColor.black, textAlignment: .left, font: UIFont(name: "Poppins-Regular", size: 16)!)
+    lazy var mainLabel = MainLabel(text: "Semester 1", textColor: UIColor(named: "LabelColor")!, textAlignment: .left, font: UIFont(name: "Poppins-Regular", size: 16)!)
     var isUniversity: Bool = false
     
     var cellIndex: Int = 0
@@ -32,6 +32,7 @@ class SemesterTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubviews()
         setConstraints()
+        backgroundColor = .clear
     }
     
     required init?(coder: NSCoder) {

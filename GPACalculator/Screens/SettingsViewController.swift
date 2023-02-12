@@ -14,7 +14,7 @@ class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "BackgroundColor")
         self.navigationItem.titleView = twoLineTitleView(text: "Settings")
         navigationController?.backgroundColor(backgroundcolor: UIColor.white)
         configureTableView()
@@ -36,11 +36,16 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCell.reuseID, for: indexPath) as? SettingsTableViewCell else { return UITableViewCell() }
         cell.setData(setting: settings[indexPath.row])
+        cell.backgroundColor = .clear
         cell.modeChanged = { [weak self] result in
             if result {
-                print("Change to Dark mode")
+                if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
+                    sceneDelegate.window?.overrideUserInterfaceStyle = .dark
+                }
             } else {
-                print("Change to Light mode")
+                if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
+                    sceneDelegate.window?.overrideUserInterfaceStyle = .light
+                }
             }
             
         }
